@@ -7,8 +7,8 @@ export const products: Product[] = [
     name: 'Neural Interface Pro X1',
     price: 2499.99,
     category: 'tech',
-    image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?w=400&h=400&fit=crop',
-    description: 'Interfaz neural de última generación para realidad aumentada',
+    image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Interfaz neural de última generación para realidad aumentada con conectividad directa cerebro-máquina',
     stock: 15,
     rating: 4.8,
     featured: true
@@ -18,8 +18,8 @@ export const products: Product[] = [
     name: 'Quantum Processor Core',
     price: 1899.99,
     category: 'tech',
-    image: 'https://images.pexels.com/photos/2061168/pexels-photo-2061168.jpeg?w=400&h=400&fit=crop',
-    description: 'Procesador cuántico para computación avanzada',
+    image: 'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Procesador cuántico de 128 qubits para computación avanzada y criptografía post-cuántica',
     stock: 8,
     rating: 4.9,
     featured: true
@@ -29,8 +29,8 @@ export const products: Product[] = [
     name: 'Holographic Display Matrix',
     price: 3299.99,
     category: 'tech',
-    image: 'https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?w=400&h=400&fit=crop',
-    description: 'Pantalla holográfica 4K con proyección 360°',
+    image: 'https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Pantalla holográfica 8K con proyección 360° y seguimiento ocular integrado',
     stock: 5,
     rating: 4.7
   },
@@ -41,8 +41,8 @@ export const products: Product[] = [
     name: 'Cyber Drone Stealth',
     price: 899.99,
     category: 'gadgets',
-    image: 'https://images.pexels.com/photos/336948/pexels-photo-336948.jpeg?w=400&h=400&fit=crop',
-    description: 'Drone invisible con IA avanzada y modo sigilo',
+    image: 'https://images.pexels.com/photos/442587/pexels-photo-442587.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Drone autónomo con IA avanzada, modo sigilo y capacidades de reconocimiento táctico',
     stock: 12,
     rating: 4.6,
     featured: true
@@ -52,8 +52,8 @@ export const products: Product[] = [
     name: 'Smart Contact Lenses',
     price: 599.99,
     category: 'gadgets',
-    image: 'https://images.pexels.com/photos/1557843/pexels-photo-1557843.jpeg?w=400&h=400&fit=crop',
-    description: 'Lentillas inteligentes con realidad aumentada',
+    image: 'https://images.pexels.com/photos/355948/pexels-photo-355948.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Lentillas inteligentes con realidad aumentada, monitoreo de salud y traducción en tiempo real',
     stock: 25,
     rating: 4.4
   },
@@ -62,8 +62,8 @@ export const products: Product[] = [
     name: 'Biometric Scanner Glove',
     price: 399.99,
     category: 'gadgets',
-    image: 'https://images.pexels.com/photos/7862477/pexels-photo-7862477.jpeg?w=400&h=400&fit=crop',
-    description: 'Guante biométrico para seguridad avanzada',
+    image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Guante biométrico táctil con escáner molecular y capacidades de hackeo ético',
     stock: 18,
     rating: 4.3
   },
@@ -74,8 +74,8 @@ export const products: Product[] = [
     name: 'Neo-Tokyo Jacket',
     price: 299.99,
     category: 'clothing',
-    image: 'https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?w=400&h=400&fit=crop',
-    description: 'Chaqueta cyberpunk con LEDs integrados',
+    image: 'https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Chaqueta cyberpunk impermeable con LEDs RGB programables y fibras termoreguladoras',
     stock: 30,
     rating: 4.5,
     featured: true
@@ -85,8 +85,8 @@ export const products: Product[] = [
     name: 'Quantum Fiber Boots',
     price: 199.99,
     category: 'clothing',
-    image: 'https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?w=400&h=400&fit=crop',
-    description: 'Botas de fibra cuántica con suela anti-gravedad',
+    image: 'https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Botas de fibra cuántica con suela magnetizada y sistema de amortiguación inteligente',
     stock: 22,
     rating: 4.2
   },
@@ -95,8 +95,8 @@ export const products: Product[] = [
     name: 'Digital Camo Pants',
     price: 149.99,
     category: 'clothing',
-    image: 'https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?w=400&h=400&fit=crop',
-    description: 'Pantalones con camuflaje digital adaptativo',
+    image: 'https://images.pexels.com/photos/1972115/pexels-photo-1972115.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Pantalones tácticos con camuflaje digital adaptativo y múltiples bolsillos ocultos',
     stock: 35,
     rating: 4.1
   }

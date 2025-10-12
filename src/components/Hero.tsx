@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 1 }}
         >
           <h1 className="text-6xl md:text-8xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-pulse">
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-teal-400 bg-clip-text text-transparent animate-pulse">
               CYBER
             </span>
             <br />
@@ -40,23 +40,15 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 1 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex justify-center items-center"
           >
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(6, 182, 212, 0.5)' }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToProducts}
-              className="bg-gradient-to-r from-cyan-500 to-pink-500 hover:from-cyan-400 hover:to-pink-400 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg"
+              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-10 py-5 rounded-xl font-bold text-xl transition-all duration-300 shadow-lg shadow-cyan-500/30"
             >
               EXPLORE PRODUCTS
-            </motion.button>
-            
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300"
-            >
-              WATCH DEMO
             </motion.button>
           </motion.div>
         </motion.div>

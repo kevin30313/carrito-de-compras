@@ -1,12 +1,25 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import ProductCard from './ProductCard';
+import ProductModal from './ProductModal';
 import { products } from '../data/products';
 import { Product } from '../types';
 
 const ProductGrid: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('name');
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleViewDetails = (product: Product) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedProduct(null), 300);
+  };
 
   const categories = [
     { id: 'all', name: 'ALL PRODUCTS', color: 'from-white to-gray-300' },
@@ -41,7 +54,7 @@ const ProductGrid: React.FC = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-bold text-white mb-4">
-            <span className="bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
               CYBER PRODUCTS
             </span>
           </h2>
@@ -61,7 +74,7 @@ const ProductGrid: React.FC = () => {
                 className={`px-6 py-3 rounded-lg font-bold transition-all duration-300 ${
                   selectedCategory === category.id
                     ? `bg-gradient-to-r ${category.color} text-black shadow-lg`
-                    : 'bg-gray-800 text-cyan-400 border border-cyan-500/30 hover:border-pink-500/50'
+                    : 'bg-gray-800 text-cyan-400 border border-cyan-500/30 hover:border-blue-500/50'
                 }`}
               >
                 {category.name}
@@ -72,7 +85,7 @@ const ProductGrid: React.FC = () => {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="px-4 py-3 bg-gray-800 border border-cyan-500/30 rounded-lg text-cyan-400 focus:border-pink-500 focus:outline-none"
+            className="px-4 py-3 bg-gray-800 border border-cyan-500/30 rounded-lg text-cyan-400 focus:border-blue-500 focus:outline-none"
           >
             <option value="name">Sort by Name</option>
             <option value="price-low">Price: Low to High</option>
@@ -86,7 +99,7 @@ const ProductGrid: React.FC = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
         >
           {sortedProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard key={product.id} product={product} onViewDetails={handleViewDetails} />
           ))}
         </motion.div>
 
@@ -96,6 +109,12 @@ const ProductGrid: React.FC = () => {
           </div>
         )}
       </div>
+
+      <ProductModal
+        product={selectedProduct}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </div>
   );
 };

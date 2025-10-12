@@ -6,16 +6,17 @@ import { useCartStore } from '../store/cartStore';
 
 interface ProductCardProps {
   product: Product;
+  onViewDetails: (product: Product) => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails }) => {
   const { addItem } = useCartStore();
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case 'tech': return 'from-blue-400 to-cyan-400';
-      case 'gadgets': return 'from-pink-400 to-purple-400';
-      case 'clothing': return 'from-green-400 to-teal-400';
+      case 'tech': return 'from-blue-500 to-cyan-500';
+      case 'gadgets': return 'from-orange-500 to-red-500';
+      case 'clothing': return 'from-green-500 to-teal-500';
       default: return 'from-gray-400 to-gray-600';
     }
   };
@@ -27,14 +28,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       whileHover={{ scale: 1.02, y: -5 }}
       className="bg-gray-900/50 backdrop-blur-sm border border-cyan-500/30 rounded-lg overflow-hidden hover:border-pink-500/50 transition-all duration-300 group"
     >
-      <div className="relative">
+      <div
+        className="relative cursor-pointer"
+        onClick={() => onViewDetails(product)}
+      >
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
         />
         {product.featured && (
-          <div className="absolute top-2 left-2 px-2 py-1 bg-gradient-to-r from-pink-500 to-purple-500 text-white text-xs font-bold rounded">
+          <div className="absolute top-2 left-2 px-2 py-1 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold rounded shadow-lg">
             FEATURED
           </div>
         )}
@@ -43,12 +47,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </div>
       </div>
 
-      <div className="p-4">
-        <h3 className="text-white font-bold text-lg mb-2 group-hover:text-cyan-400 transition-colors">
+      <div className="p-5">
+        <h3 className="text-white font-bold text-xl mb-2 group-hover:text-cyan-400 transition-colors">
           {product.name}
         </h3>
-        
-        <p className="text-gray-400 text-sm mb-3 line-clamp-2">
+
+        <p className="text-gray-400 text-sm mb-4 line-clamp-2 leading-relaxed">
           {product.description}
         </p>
 
@@ -79,10 +83,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => addItem(product)}
-            className="flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-pink-500 hover:from-cyan-400 hover:to-pink-400 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-cyan-500/25"
+            className="flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-cyan-500/50"
           >
-            <PlusIcon className="w-4 h-4" />
-            <span>Add to Cart</span>
+            <PlusIcon className="w-5 h-5" />
+            <span>Add</span>
           </motion.button>
         </div>
       </div>
